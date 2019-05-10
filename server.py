@@ -50,7 +50,7 @@ async def whitelist_transaction(data):
     client, account = await init_kin()
     client_transaction = str(data, "utf-8")
     response = account.whitelist_transaction(client_transaction)
-    client.close()
+    await client.close()
     return response
 
 #fund newly created account
@@ -60,7 +60,7 @@ async def fund_account(address,memo, amount):
     client, account = await init_kin()
     minimum_fee = await client.get_minimum_fee() #they will charge 0 if whitelisted by Kin
     tx_hash = await account.create_account(address=address, starting_balance=amount, fee=minimum_fee, memo_text=memo)
-    client.close()
+    await client.close()
     return tx_hash
 
 #send a payment
@@ -71,7 +71,7 @@ async def send_payment(address,id, memo, amount):
     client, account = await init_kin()
     minimum_fee = await client.get_minimum_fee() #they will charge 0 if whitelisted by Kin
     tx_hash = await account.send_kin(address=address, amount=amount, fee=minimum_fee, memo_text=memo)
-    client.close()
+    await client.close()
     return tx_hash
 
 
