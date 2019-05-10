@@ -85,6 +85,11 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+# Visual Studio solution files
+*.sln
+*.pyproj
+
+
 # Visual Studio profiler
 *.psess
 *.vsp
