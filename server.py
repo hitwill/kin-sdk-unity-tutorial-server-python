@@ -56,7 +56,7 @@ async def whitelist_transaction(data):
 #fund newly created account
 #https://github.com/kinecosystem/kin-sdk-python/tree/v2-master#creating-a-new-account
 async def fund_account(address,memo, amount):
-    amount = min(amount,0.01) # set max we are willing to send - consider adding other security features
+    amount = min(amount,10) # set max we are willing to send - consider adding other security features
     client, account = await init_kin()
     minimum_fee = await client.get_minimum_fee() #they will charge 0 if whitelisted by Kin
     tx_hash = await account.create_account(address=address, starting_balance=amount, fee=minimum_fee, memo_text=memo)
