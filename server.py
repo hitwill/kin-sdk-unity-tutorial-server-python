@@ -22,9 +22,10 @@ def message():
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     if request.args.get("fund") is not None: #fund a newly created account
-        response = loop.run_until_complete(fund_account(request.form.get("address"), request.form.get("memo"), request.form.get("amount")))
+        response = loop.run_until_complete(fund_account(request.args.get("address"), request.args.get("memo"), float(request.args.get("amount"))))
+        #response = loop.run_until_complete(fund_account(request.form.get("address"), request.form.get("memo"), float(request.form.get("amount"))))
     elif request.args.get("request") is not None: #send a payment to an account
-        response = loop.run_until_complete(send_payment(request.form.get("address"), request.form.get("id"), request.form.get("memo"), request.form.get("amount")))
+        response = loop.run_until_complete(send_payment(request.form.get("address"), request.form.get("id"), request.form.get("memo"), float(request.form.get("amount"))))
     elif request.args.get("whitelist") is not None: #whitelist an account
         response = loop.run_until_complete(whitelist_transaction(request.data))
     else:
