@@ -49,6 +49,7 @@ async def init_kin():
 async def whitelist_transaction(data):
     client, account = await init_kin()
     client_transaction = str(data, "utf-8")
+    print(client_transaction)
     response = account.whitelist_transaction(client_transaction)
     await client.close()
     return response
