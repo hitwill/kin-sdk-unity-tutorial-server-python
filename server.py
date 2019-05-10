@@ -59,7 +59,7 @@ async def fund_account(address,memo, amount):
     amount = min(amount,0.01) # set max we are willing to send - consider adding other security features
     client, account = await init_kin()
     minimum_fee = await client.get_minimum_fee() #they will charge 0 if whitelisted by Kin
-    tx_hash = await account.create_account(address, starting_balance=amount, fee=minimum_fee, memo_text=memo)
+    tx_hash = await account.create_account(address=address, starting_balance=amount, fee=minimum_fee, memo_text=memo)
     client.close()
     return tx_hash
 
@@ -70,7 +70,7 @@ async def send_payment(address,id, memo, amount):
     amount = min(amount,2) # set max we are willing to send - consider adding other security features
     client, account = await init_kin()
     minimum_fee = await client.get_minimum_fee() #they will charge 0 if whitelisted by Kin
-    tx_hash = await account.send_kin(address, amount, fee=minimum_fee, memo_text=memo)
+    tx_hash = await account.send_kin(address=address, amount=amount, fee=minimum_fee, memo_text=memo)
     client.close()
     return tx_hash
 
@@ -78,5 +78,4 @@ async def send_payment(address,id, memo, amount):
 # Start listeining
 if __name__ == "__main__":
     runport = int(os.environ.get("PORT", 5000)) 
-    app.run(debug=False, host='0.0.0.0',port=runport) 
-    
+    app.run(debug=False, host='0.0.0.0',port=runport)
