@@ -10,9 +10,11 @@ import asyncio
 
 #Variables for the environment
 kin_env = TEST_ENVIRONMENT
-unique_app_id = '1acd'
+unique_app_id = '1acd' #your app id assigned by Kin - you can use 1acd for testing
 seed = os.environ['PRIVATE_KEY'] #private key (keep private/ store in .env file for production)
 public_address = 'GCMVZ4B6P4QEZL727UH2A6ABA2AYY67GZC3NILDD2DVSZPRN4QQCRATG' #public key
+
+
 app = Flask(__name__)
 
 
