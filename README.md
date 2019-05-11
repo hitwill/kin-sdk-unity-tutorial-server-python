@@ -21,6 +21,7 @@ public_address = 'GCMVZ4B6P4QEZL727UH2A6ABA2AYY67GZC3NILDD2DVSZPRN4QQCRATG' #pub
 ```
 
 You can use [Kin's Laboratory](https://laboratory.kin.org/index.html#account-creator?network=test) to generate your seed and public address.
+
 4. Push to your server (Heroku recommended)
 
 
