@@ -38,6 +38,7 @@ def message():
 #errors to your client
 
 #initialize the kin object
+#https://github.com/kinecosystem/kin-sdk-python/tree/v2-master#initialization
 async def init_kin():
     client = KinClient(kin_env)
     account = client.kin_account(seed, app_id=unique_app_id)
