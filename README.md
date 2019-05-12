@@ -8,6 +8,10 @@ With this code, you can call [Kin's blockchain](https://www.kin.org/blockchainEx
 
 You can also extend it to suit your needs.
 
+![sample python code](https://i.imgur.com/T7JPJ3m.png)
+
+
+
 ## Installation
 
 1. Clone to your localhost directory
