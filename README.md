@@ -17,11 +17,11 @@ You can also extend it to suit your needs.
 1. Clone to your localhost directory
 2. Use [pip](https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-according-to-the-requirements-txt-file-from-a) to install dependencies in requirements.txt
 3. Modify the following variables in server.py
-```
-kin_env = TEST_ENVIRONMENT
-unique_app_id = '1acd' #your app id assigned by Kin - you can use 1acd for testing
-seed = os.environ['PRIVATE_KEY'] #private key (keep private/ store in .env file for production)
-public_address = 'GCMVZ4B6P4QEZL727UH2A6ABA2AYY67GZC3NILDD2DVSZPRN4QQCRATG' #public key
+```python
+    kin_env = TEST_ENVIRONMENT
+    unique_app_id = '1acd' #your app id assigned by Kin - you can use 1acd for testing
+    seed = os.environ['PRIVATE_KEY'] #private key (keep private/ store in .env file for production)
+    public_address = 'GCMVZ4B6P4QEZL727UH2A6ABA2AYY67GZC3NILDD2DVSZPRN4QQCRATG' #public key
 ```
 
 You can use [Kin's Laboratory](https://laboratory.kin.org/index.html#account-creator?network=test) to generate your seed and public address.
