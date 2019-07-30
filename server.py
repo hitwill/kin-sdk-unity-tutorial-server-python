@@ -6,6 +6,7 @@ from flask import Flask, request, jsonify, make_response
 import sys
 import os
 import asyncio
+import json
 
 
 #Variables for the environment
@@ -51,7 +52,7 @@ async def init_kin():
  #https://github.com/kinecosystem/kin-sdk-python/tree/v2-master#whitelist-a-transaction
 async def whitelist_transaction(data):
     client, account = await init_kin()
-    client_transaction = str(data, "utf-8")
+    client_transaction = json.dumps(data, ensure_ascii=False)
     response = account.whitelist_transaction(client_transaction)
     await client.close()
     return response
